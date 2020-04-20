@@ -1,2 +1,2 @@
-webpackJsonp([0xd2384c26c04d],{668:function(t,a){t.exports={data:{markdownRemark:{html:"<p>Reputation measures how likely a hacker’s finding is to be immediately relevant and actionable. </p>",frontmatter:{path:"/glossary/reputation",title:"Reputation"}}},pathContext:{}}}});
+webpackJsonp([0xd2384c26c04d],{661:function(t,a){t.exports={data:{markdownRemark:{html:"<p>Reputation measures how likely a hacker’s finding is to be immediately relevant and actionable. </p>",frontmatter:{path:"/glossary/reputation",title:"Reputation"}}},pathContext:{}}}});
 //# sourceMappingURL=path---glossary-reputation-30256571c87c57b1ed2e.js.map
