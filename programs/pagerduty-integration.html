@@ -48,54 +48,16 @@
 <p>To set up the integration between PagerDuty and each time a high or critical report is created on HackerOne:</p>
 <ol>
 <li>Navigate to <strong>Configuration > Services</strong> on PagerDuty.</li>
-<li><a href="https://support.pagerduty.com/docs/services-and-integrations#section-events-api-v2">Create a new service</a> or add an integration to an existing service on PagerDuty by clicking <strong>+Add New Services</strong> on your services page.</li>
-<li>Select <strong>Custom Event Transformer</strong> for the <em>Integration Type</em>.</li>
+<li>Click on <strong>New Service</strong> or add an integration to an existing service on PagerDuty by clicking <strong>+Add New Services</strong> on your services page.</li>
+<li>Select <strong>HackerOne</strong> for the <em>Integration Type</em>.</li>
+<li>Click <strong>Add Service</strong>.</li>
 <li>Go to the <strong>Integrations</strong> tab on the <strong>Services</strong> page.</li>
-<li>Click the settings gear next to the integration and select <strong>Edit</strong>.</li>
-<li>Edit the code that gets executed when the integration gets triggered by pasting the code below</li>
-</ol>
-<pre><code>var webhook = PD.inputRequest;
-var event_type = PD.Trigger;
-var severity = webhook.body.data.report.relationships.severity;
-var severity_rating = severity ? severity.data.attributes.rating : null;
-
-if (severity_rating == "high" || severity_rating == "critical") {
-  var normalized_event = {
-    event_type: event_type,
-    incident_key: webhook.body.data.report.id,
-    client: 'HackerOne',
-    client_url: 'https://hackerone.com/reports/' + webhook.body.data.report.id,
-    description: 'A ' + severity_rating + ' vulnerability was reported to HackerOne!',
-    details: 'The ' + severity_rating + ' report title is ' + webhook.body.data.report.attributes.title
-  };
-
-  PD.emitGenericEvents([normalized_event]);
-}
-</code></pre>
-<p>If you want to be notified for all reports that get created or triaged (regardless of severity) you can use the following code instead:</p>
-<pre><code>var webhook = PD.inputRequest;
-var event_type = PD.Trigger;
-var severity = webhook.body.data.report.relationships.severity;
-var severity_rating = severity ? severity.data.attributes.rating : null;
-
-var normalized_event = {
-  event_type: event_type,
-  incident_key: webhook.body.data.report.id,
-  client: 'HackerOne',
-  client_url: 'https://hackerone.com/reports/' + webhook.body.data.report.id,
-  description: 'A ' + severity_rating + ' vulnerability was reported to HackerOne!',
-  details: 'The ' + severity_rating + ' report title is ' + webhook.body.data.report.attributes.title
-};
-
-PD.emitGenericEvents([normalized_event]);
-</code></pre>
-<ol start="7">
-<li>Click <strong>Save Changes</strong>. You’ll be redirected to the <em>View</em> page of the integration.</li>
-<li>Copy the <em>Integration URL</em> on the view page.</li>
+<li>Click the settings gear next to the integration and select <strong>View</strong>.</li>
+<li>Copy the <strong>Integration URL</strong> and store that for later.</li>
 <li>Log in to your account on hackerone.com.</li>
 <li>Navigate to your webhooks settings on <strong>Program Settings > Program > Webhooks</strong>.</li>
 <li>Click <strong>New Webhook</strong>.</li>
-<li>Paste the URL that was copied from the Pagerduty integration page in step 8.</li>
+<li>Paste the URL that was copied from the Pagerduty integration page in step 7.</li>
 <li>Select <strong>Report created</strong> and <strong>Report triaged</strong> as the events you want to trigger the webhook on.</li>
 <li><em>(Optional)</em> Select any other events you want to trigger the webhook on.</li>
 <li>Click <strong>Add webhook</strong> to save the webhook.</li>
