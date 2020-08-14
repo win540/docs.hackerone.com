@@ -235,8 +235,8 @@
 <url> <loc>https://docs.hackerone.com/hackers/sessions.html</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://docs.hackerone.com/programs/multiple-jira-integrations.html</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://docs.hackerone.com/programs/setting-response-targets.html</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://docs.hackerone.com/programs/severity.html</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://docs.hackerone.com/hackers/severity.html</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://docs.hackerone.com/programs/severity.html</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://docs.hackerone.com/glossary/signal</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://docs.hackerone.com/programs/signal-requirements.html</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://docs.hackerone.com/hackers/signal-and-impact.html</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
